@@ -557,9 +557,6 @@
       $form = new Form($_POST);
 
 
-
-
-
       <section class="bg-whisper">
         <div class="container">
           <div class="row">
