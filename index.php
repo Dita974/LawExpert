@@ -561,6 +561,26 @@
             <div class="col-md-10 col-lg-9 col-xl-7">
               <div class="section-50 section-md-75 section-xl-100">
                 <h3>Free Consultation</h3>
+
+                <?php
+                  if(isset($_POST['name'], $_POST['phone'], $_POST['email'])) 
+                  { 
+                      if(!empty($_POST['name']) && !empty($_POST['phone']) && !empty( $_POST['email']))
+                      {
+                          $name = $_POST['name'];
+                          $phone = $_POST['phone'];
+                          $email =  $_POST['email'];
+                                    
+                          echo "Welcome" . " " . "$name ," . "<br>" . "your phone number is : " . "$phone" . "<br>" . " and your email is : " . "$email" . ".";
+                      } else {
+                          echo "Veuillez entrer vos informations";
+                      }             
+                  }
+                ?>
+
+
+
+
                 <form class="rd-mailform" data-form-output="form-output-global" data-form-type="contact" method="post" action="
                 ">
                   <div class="row row-30">
@@ -576,7 +596,7 @@
                     <div class="col-md-6">
                       <div class="form-wrap">
 
-                      <?php $form->createInput('phone'); ?>
+                      <?php $form->createInputPhone('phone'); ?>
 
                         <!-- <input class="form-input" id="request-form-phone" type="text" name="phone" data-constraints="@Numeric @Required">
                         <label class="form-label" for="request-form-phone">Phone</label> -->
@@ -604,8 +624,7 @@
                     </div>
                     <div class="col-12">
                       <div class="form-wrap">
-
-                      <?php $form->createInput('message'); ?>
+                      <?php $form->createTextarea('message'); ?>
 
                         <!-- <textarea class="form-input" id="feedback-2-message" name="message" data-constraints="@Required"></textarea>
                         <label class="form-label" for="feedback-2-message">Message</label> -->
@@ -616,8 +635,6 @@
                         <div class="col-md-6">
 
                         <?php $form->createSubmit('Send');?>
-
-
 
                           <!-- <button class="button button-block button-primary" type="submit">Request a Free Consultation</button> -->
                         </div>
