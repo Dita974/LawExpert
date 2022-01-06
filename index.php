@@ -562,25 +562,6 @@
               <div class="section-50 section-md-75 section-xl-100">
                 <h3>Free Consultation</h3>
 
-                <?php
-                  if(isset($_POST['name'], $_POST['phone'], $_POST['email'])) 
-                  { 
-                      if(!empty($_POST['name']) && !empty($_POST['phone']) && !empty( $_POST['email']))
-                      {
-                          $name = $_POST['name'];
-                          $phone = $_POST['phone'];
-                          $email =  $_POST['email'];
-                                    
-                          echo "Welcome" . " " . "$name ," . "<br>" . "your phone number is : " . "$phone" . "<br>" . " and your email is : " . "$email" . ".";
-                      } else {
-                          echo "Veuillez entrer vos informations";
-                      }             
-                  }
-                ?>
-
-
-
-
                 <form class="rd-mailform" data-form-output="form-output-global" data-form-type="contact" method="post" action="
                 ">
                   <div class="row row-30">
@@ -626,8 +607,9 @@
                       <div class="form-wrap">
                       <?php $form->createTextarea('message'); ?>
 
-                        <!-- <textarea class="form-input" id="feedback-2-message" name="message" data-constraints="@Required"></textarea>
-                        <label class="form-label" for="feedback-2-message">Message</label> -->
+                        <!-- <textarea class="form-input" id="feedback-2-message" name="message" data-constraints="@Required"></textarea> -->
+
+                        <!-- <label class="form-label" for="feedback-2-message">Message</label> -->
                       </div>
                     </div>
                     <div class="col-12">
@@ -640,6 +622,26 @@
                         </div>
                       </div>
                     </div>
+                    
+                <div class="php my-3">
+
+<?php
+  if(isset($_POST['name'], $_POST['phone'], $_POST['email'], $_POST['message'])) 
+  { 
+      if(!empty($_POST['name']) && !empty($_POST['phone']) && !empty( $_POST['email']) && !empty( $_POST['message']))
+      {
+          $name = $_POST['name'];
+          $phone = $_POST['phone'];
+          $email = $_POST['email'];
+          $message = $_POST['message'];
+                    
+          echo "Welcome" . " " . "$name ," . "<br>" . "your phone number is : " . "$phone ," . "<br>" . "your email is : " . "$email" . "<br>" . "and your message is : ". "$message" . ".";
+      } else {
+          echo "Please enter your informations";
+      }             
+  }
+?>
+</div>
                   </div>
                 </form>
               </div>
