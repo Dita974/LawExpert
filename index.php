@@ -552,10 +552,8 @@
 
       <?php
       require './Class/Form.php';
-
-
       $form = new Form($_POST);
-
+      ?>
 
       <section class="bg-whisper">
         <div class="container">
@@ -563,7 +561,8 @@
             <div class="col-md-10 col-lg-9 col-xl-7">
               <div class="section-50 section-md-75 section-xl-100">
                 <h3>Free Consultation</h3>
-                <form class="rd-mailform" data-form-output="form-output-global" data-form-type="contact" method="post" action="bat/rd-mailform.php">
+                <form class="rd-mailform" data-form-output="form-output-global" data-form-type="contact" method="post" action="
+                ">
                   <div class="row row-30">
                     <div class="col-md-6">
                       <div class="form-wrap">
@@ -571,19 +570,25 @@
                       <?php $form->createInput('name'); ?>
 
                         <!-- <input class="form-input" id="request-form-name" type="text" name="name" data-constraints="@Required"> -->
-                        <label class="form-label" for="request-form-name">Name</label>
+                        <!-- <label class="form-label" for="request-form-name">Name</label> -->
                       </div>
                     </div>
                     <div class="col-md-6">
                       <div class="form-wrap">
-                        <input class="form-input" id="request-form-phone" type="text" name="phone" data-constraints="@Numeric @Required">
-                        <label class="form-label" for="request-form-phone">Phone</label>
+
+                      <?php $form->createInput('phone'); ?>
+
+                        <!-- <input class="form-input" id="request-form-phone" type="text" name="phone" data-constraints="@Numeric @Required">
+                        <label class="form-label" for="request-form-phone">Phone</label> -->
                       </div>
                     </div>
                     <div class="col-md-6">
                       <div class="form-wrap">
-                        <input class="form-input" id="request-form-email" type="email" name="email" data-constraints="@Email @Required">
-                        <label class="form-label" for="request-form-email">Email</label>
+
+                        <?php $form->createInput('email'); ?>
+
+                        <!-- <input class="form-input" id="request-form-email" type="email" name="email" data-constraints="@Email @Required">
+                        <label class="form-label" for="request-form-email">Email</label> -->
                       </div>
                     </div>
                     <div class="col-md-6">
@@ -599,14 +604,22 @@
                     </div>
                     <div class="col-12">
                       <div class="form-wrap">
-                        <textarea class="form-input" id="feedback-2-message" name="message" data-constraints="@Required"></textarea>
-                        <label class="form-label" for="feedback-2-message">Message</label>
+
+                      <?php $form->createInput('message'); ?>
+
+                        <!-- <textarea class="form-input" id="feedback-2-message" name="message" data-constraints="@Required"></textarea>
+                        <label class="form-label" for="feedback-2-message">Message</label> -->
                       </div>
                     </div>
                     <div class="col-12">
                       <div class="row">
                         <div class="col-md-6">
-                          <button class="button button-block button-primary" type="submit">Request a Free Consultation</button>
+
+                        <?php $form->createSubmit('Send');?>
+
+
+
+                          <!-- <button class="button button-block button-primary" type="submit">Request a Free Consultation</button> -->
                         </div>
                       </div>
                     </div>
@@ -823,6 +836,6 @@
     </div>
     <div class="snackbars" id="form-output-global"></div>
     <script src="js/core.min.js"></script>
-    // <script src="js/script.js"></script> 
+   <!-- <script src="js/script.js"></script>  -->
   </body>
 </html>

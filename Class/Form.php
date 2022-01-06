@@ -33,15 +33,19 @@
 
         public function createInput($key) {
             echo '<label for='. $key . '>'. $key .' : </label>';
-            echo '<input type="text" class="form-control"  name="' . $key . '" value="'. $this->getValue($key).'"> '; 
+            echo '<input type="text" class="form-input"  name="' . $key . '" value="'. $this->getValue($key).'"> '; 
+
+        }
+
+        public function createTextarea($key) {
+            echo '<label for='. $key . '>'. $key .' : </label>';
+            echo '<textarea class="form-input" id="feedback-2-message"  name="' . $key . '" value="'. $this->getValue($key).'"> '; 
 
         }
 
         public function createSubmit($text) {
             echo '<button type="submit"  class="btn btn-primary">'.$text.'</button>';
         }
-
-
-       
+ 
     }
 
